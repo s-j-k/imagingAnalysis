@@ -1,7 +1,8 @@
 function summary_820
 % you need to change directory to the one that has the .mat files
-cd '/Users/bbs/Dropbox/Kinematic_Data/Bruker/raw data/0104data/gcamp'
+cd 'C:\Users\sjkim1\Dropbox (BOSTON UNIVERSITY)\Kinematic_Data\Bruker\raw data\0104data\gcamp'
 load('DATA820.mat','ISO_F')
+
 load('data920.mat','F_dff')
 % remove inactive cells
  cells=ones(181,1);

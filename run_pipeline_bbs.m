@@ -6,13 +6,13 @@
 clear; gcp; % clear workspace and start a parallel engine
 
 %STEP 1 ADD CaImAn-MATLAB-master and all subfolders to path 
-addpath(genpath('/Users/bbs/Documents/MATLAB/CaImAn-MATLAB-master'))
+addpath(genpath('/Users/sjkim1/Documents/MATLAB/CaImAn-MATLAB-master'))
 
 %STEP 2 ADD NoRMCorre-master and all subfolders to path 
-addpath(genpath('/Users/bbs/Documents/MATLAB/NoRMCorre-master'))
+addpath(genpath('/Users/sjkim1/Documents/MATLAB/NoRMCorre-master'))
 
 %STEP 3 IDENTIFY the location of the 920 tif
-foldername = '/Users/bbs/Dropbox/Kinematic_Data/Bruker/raw data/0104data/gcamp'; % folder where all the files are located.
+foldername = '\Users\sjkim1\Dropbox (BOSTON UNIVERSITY)\Kinematic_Data\Bruker\raw data\0104data\gcamp'; % folder where all the files are located.
 
 %STEP 4 RUN PIPELINE
 

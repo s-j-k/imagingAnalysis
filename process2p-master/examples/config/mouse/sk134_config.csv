@@ -1,0 +1,2 @@
+Day,Session,BehavType,ImagingFile,BehavFile,Alignment,ROI,TC,Neuropil,dff,Deconvolution,sbxpath,h5path,suite2ppath,nFrames_oneplane,datapath,roiFile,tcFile
+0,1,Tuning PuretoneBef,sk134_20231010_00010,,0,0,0,0,0,0,none,none,F:\sk134\10_10\suite2p,5000,F:\sk134\10_10\,none,none

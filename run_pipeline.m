@@ -18,10 +18,15 @@ clear; gcp; % clear workspace and start a parallel engine
 % sessid = '20210123';
 % TSer = '7'; FOVnum = '2'; 
 % foldername =['D:\Research\Scott\raw data\FOV' FOVnum '\' sessid '-TSeries' TSer];
-% filetype = 'tif'; % type of files to be processed
+foldername='C:\Users\sjkim1\Documents\New folder (2)\';
+filetype = 'tif'; % type of files to be processed
 %         % Types currently supported .tif/.tiff, .h5/.hdf5, .raw, .avi, and .mat files
 files = subdir(fullfile(foldername,['*.',filetype]));   % list of filenames (will search all subdirectories)
-FOV = size(read_file(files(1).name,1,1));
+
+filename = files(1).name;
+% readfile=h5read('example_vol_data.h5','/cleanimg');
+FOV = size(read_file(filename,1,1));
+% FOV = size(readfile);
 numFiles = length(files);
 
 %% motion correct (and save registered h5 files as 2d matrices (to be used in the end)..)
@@ -65,11 +70,12 @@ tsub = 1;                                        % degree of downsampling (for 3
 ds_filename = [foldername,'/ds_data.mat'];
 data_type = class(read_file(registered_files(1).name,1,1));
 data = matfile(ds_filename,'Writable',true);
-data.Y  = zeros([FOV,0],data_type);
+% data.Y  = zeros([FOV,0],data_type); % for tiff
+data.Y  = zeros([FOV],data_type); % for h5 files? 
 data.Yr = zeros([prod(FOV),0],data_type);
 data.sizY = [FOV,0];
 F_dark = Inf;                                    % dark fluorescence (min of all data)
-batch_size = 10000;                               % read chunks of that size
+batch_size = 1000;                               % read chunks of that size
 batch_size = round(batch_size/tsub)*tsub;        % make sure batch_size is divisble by tsub
 Ts = zeros(numFiles,1);                          % store length of each file
 cnt = 0;                                         % number of frames processed so far
@@ -81,14 +87,16 @@ for i = 1:numFiles
     ndimsY = length(dims);                       % number of dimensions (data array might be already reshaped)
     Ts(i) = dims(end);
     Ysub = zeros(FOV(1),FOV(2),floor(Ts(i)/tsub),data_type);
-    data.Y(FOV(1),FOV(2),sum(floor(Ts/tsub))) = zeros(1,data_type);
+%     data.Y(FOV(1),FOV(2),sum(floor(Ts/tsub))) = zeros(1,data_type); %
+%     uncomment for tiffs
     data.Yr(prod(FOV),sum(floor(Ts/tsub))) = zeros(1,data_type);
     cnt_sub = 0;
     for t = 1:batch_size:Ts(i)
         Y = read_file(name,t,min(batch_size,Ts(i)-t+1));    
         F_dark = min(nanmin(Y(:)),F_dark);
         ln = size(Y,ndimsY);
-        Y = reshape(Y,[FOV,ln]);
+%         Y = reshape(Y,[FOV,ln]); % change back for tiff's
+        Y = reshape(Y,[FOV,[]]); % for h5 files
         Y = cast(downsample_data(Y,'time',tsub),data_type);
         ln = size(Y,3);
         Ysub(:,:,cnt_sub+1:cnt_sub+ln) = Y;

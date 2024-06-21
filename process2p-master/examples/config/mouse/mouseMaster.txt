@@ -1,0 +1,102 @@
+mouse rm181
+imagingConfig rashi.txt
+behaviorConfig GNG.txt
+sessionConfig rm181_config.csv
+
+mouse sk144
+imagingConfig meso4.txt
+behaviorConfig GNG.txt
+sessionConfig sk144_config.csv
+
+mouse sk134
+imagingConfig meso4.txt
+behaviorConfig GNG.txt
+sessionConfig sk134_config.csv
+
+mouse sk126
+imagingConfig meso3.txt
+behaviorConfig GNG.txt
+sessionConfig sk126_tuning_config.csv
+
+mouse sk125
+imagingConfig meso3.txt
+behaviorConfig GNG.txt
+sessionConfig sk125_config.csv
+
+mouse sk132
+imagingConfig meso3.txt
+behaviorConfig GNG.txt
+sessionConfig sk132_config.csv
+
+mouse sk117_0505
+imagingConfig meso2.txt
+behaviorConfig GNG.txt
+sessionConfig sk117_0505_config.csv
+
+mouse sk117_0409
+imagingConfig meso.txt
+behaviorConfig GNG.txt
+sessionConfig sk117_0409_config.csv
+
+mouse sk117_0405
+imagingConfig meso.txt
+behaviorConfig GNG.txt
+sessionConfig sk117_0405_config.csv
+
+mouse sk117_04171
+imagingConfig meso.txt
+behaviorConfig GNG.txt
+sessionConfig sk117_04171_config.csv
+
+mouse sk023
+imagingConfig excitatory.txt
+behaviorConfig GNG.txt
+sessionConfig sk023_config.csv
+
+mouse sk83_000
+imagingConfig excitatory.txt
+behaviorConfig GNG.txt
+sessionConfig sk83_000_config.csv
+
+mouse sk83_001
+imagingConfig excitatory.txt
+behaviorConfig GNG.txt
+sessionConfig sk83_001_config.csv
+
+mouse sk83_003
+imagingConfig excitatory.txt
+behaviorConfig GNG.txt
+sessionConfig sk83_003_config.csv
+
+mouse sk76_001
+imagingConfig excitatory.txt
+behaviorConfig GNG.txt
+sessionConfig sk76_001_config.csv
+
+mouse sk78_001
+imagingConfig excitatory.txt
+behaviorConfig GNG.txt
+sessionConfig sk78_001_config.csv
+
+mouse cd017
+imagingConfig excitatory.txt
+behaviorConfig GNG.txt
+sessionConfig cd017_config.csv
+
+mouse cd036
+imagingConfig excitatory.txt
+behaviorConfig GNG.txt
+sessionConfig cd036_config.csv
+
+mouse cd040
+imagingConfig excitatory.txt
+behaviorConfig GNG.txt
+
+mouse cd037
+imagingConfig excitatory.txt
+behaviorConfig GNG.txt
+sessionConfig cd037_config.csv
+
+mouse zz008
+imagingConfig excitatory.txt
+behaviorConfig GNG_ctrl1.txt

@@ -1,0 +1,2 @@
+Day,Session,BehavType,ImagingFile,BehavFile,Alignment,ROI,TC,Neuropil,dff,Deconvolution,sbxpath,h5path,suite2ppath,nFrames_oneplane,datapath,roiFile,tcFile
+0,1,Tuning PuretoneBef,20230405_sk117_001_00001_00001,,0,0,0,0,0,0,none,none,R:\sjk_mesoscope\SK117\20230405\20230405_001_001\suite2p,30020 30020,R:\sjk_mesoscope\SK117\20230405\20230405_001_001,none,none

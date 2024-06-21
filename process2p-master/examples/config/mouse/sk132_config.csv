@@ -1,0 +1,2 @@
+Day,Session,BehavType,ImagingFile,BehavFile,Alignment,ROI,TC,Neuropil,dff,Deconvolution,sbxpath,h5path,suite2ppath,nFrames_oneplane,datapath,roiFile,tcFile
+0,1,Tuning PuretoneBef,20230704_sk132_tuning_00001,,0,0,0,0,0,0,none,none,E:\sk132\tuning\suite2p,30000,E:\sk132\tuning,AxonRoiSet.zip,

@@ -12,7 +12,7 @@ addpath(genpath('/Users/sjkim1/Documents/MATLAB/CaImAn-MATLAB-master'))
 addpath(genpath('/Users/sjkim1/Documents/MATLAB/NoRMCorre-master'))
 
 %STEP 3 IDENTIFY the location of the 920 tif
-foldername = '\Users\sjkim1\Dropbox (BOSTON UNIVERSITY)\Kinematic_Data\Bruker\raw data\0104data\gcamp'; % folder where all the files are located.
+foldername = 'C:\Users\sjkim1\Documents\New folder (2)'; % folder where all the files are located.
 
 %STEP 4 RUN PIPELINE
 

@@ -1,0 +1,13 @@
+imagingType meso
+allChannel green,red
+functionalChannel green
+landmarkChannel 
+alignmentChannel red
+alignment suite2p
+roiMethod suite2p
+roiType cell
+tcMethod suite2p
+multiday true
+nPlanes 1
+neuropil mean
+acquisitionRate 14.26

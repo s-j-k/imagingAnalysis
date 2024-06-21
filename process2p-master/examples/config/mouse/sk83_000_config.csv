@@ -1,0 +1,2 @@
+Day,Session,BehavType,ImagingFile,BehavFile,Alignment,ROI,TC,Neuropil,dff,Deconvolution,sbxpath,h5path,suite2ppath,nFrames_oneplane,datapath,roiFile,tcFile
+0,1,Tuning PuretoneBef,sk83_003_001,,0,0,0,0,0,0,none,none,O:\sjk\Mads\Data\suite2p.sk83.003.001\suite2p,8500,O:\sjk\Mads\Data\raw.sk83.003.001,none ,none

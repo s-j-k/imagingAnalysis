@@ -1,0 +1,2 @@
+Day,Session,BehavType,ImagingFile,BehavFile,Alignment,ROI,TC,Neuropil,dff,Deconvolution,sbxpath,h5path,suite2ppath,nFrames_oneplane,datapath,roiFile,tcFile
+0,1,Tuning PuretoneBef,20230704_tuning_00003,,0,0,0,0,0,0,E:\sk125\tuning,E:\sk125\tuning,E:\sk125\tuning\suite2p,30000,E:\sk125\tuning,none,none

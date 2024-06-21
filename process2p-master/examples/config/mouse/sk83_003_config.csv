@@ -1,0 +1,2 @@
+Day,Session,BehavType,ImagingFile,BehavFile,Alignment,ROI,TC,Neuropil,dff,Deconvolution,sbxpath,h5path,suite2ppath,nFrames_oneplane,datapath,roiFile,tcFile
+0,1,Tuning PuretoneBef,sk83_003_001,,0,0,0,0,0,0,V:\sjk\ACMGB_2\sk83\tonotopy\20221014,V:\sjk\ACMGB_2\sk83\tonotopy\20221014,V:\sjk\ACMGB_2\sk83\tonotopy\20221014\suite2p_good,8500,V:\sjk\TC_analysis\sk83_003_001\,RoiSetGreen-2.zip RoiSetRed.zip,tc_green_40_3.mat tc_red.mat

@@ -1,0 +1,2 @@
+Day,Session,BehavType,ImagingFile,BehavFile,Alignment,ROI,TC,Neuropil,dff,Deconvolution,sbxpath,h5path,suite2ppath,nFrames_oneplane,datapath,roiFile,tcFile
+0,1,Tuning PuretoneBef,sk76_001_001,,0,0,0,0,0,0,X:\sjk\ACMGB_1\sk76,X:\sjk\ACMGB_1\sk76,X:\sjk\ACMGB_1\sk76\suite2p,15300,V:\sjk\TC_analysis\sk76_001_001,RoiSetGreen.zip RoiSetRed.zip,tc_green.mat tc_red.mat

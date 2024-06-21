@@ -1,0 +1,2 @@
+Day,Session,BehavType,ImagingFile,BehavFile,Alignment,ROI,TC,Neuropil,dff,Deconvolution,sbxpath,h5path,suite2ppath,nFrames_oneplane,datapath,roiFile,tcFile
+0,1,Tuning PuretoneBef,RM182_002_001,,0,0,0,0,0,0,none,none,V:\Rashi\Test_suite2p\182_002_001\suite2p,17001,V:\Rashi\Test_suite2p\182_002_001,none,none

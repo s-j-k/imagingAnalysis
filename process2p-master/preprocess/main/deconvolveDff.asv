@@ -17,10 +17,9 @@ function [s,c,p] = deconvolveDff(sessionDff,varargin)
 % 'spk_SNR': minimum signal strength (in std unit) to detect a spike. default = 0
 %   reasonable choice are from 0.1 - 1 (std)
 
-% apply on raw trace, also start with foopsi since threshold and
-% constrained are potentially more strict
-% kishore suggested using threshold in a lax way?? 
+% 
 
+%
 % Output Arguments --
 % s: deconvolved spks. c: denoised calcium trace. p: parameters.
 % If input is cell/matrix, output is corresponding cell/matrix. 

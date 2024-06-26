@@ -10,8 +10,8 @@ end
 
 if strcmp(mouse,'sk83')
 %     suite2ppath = ['C:\Users\sjkim1\Desktop\scratch\' mouse '\FOV2\suite2p\'];
-    suite2ppath=['C:\Users\sjkim1\Desktop\scratch\sk83\\suite2p\'];
-    sbxpath=['C:\Users\sjkim1\Desktop\scratch\sk83\'];
+    suite2ppath=['O:\sjk\Mads\Data\suite2p.sk83.003.001\suite2p\'];
+    sbxpath=['O:\sjk\Mads\Data\raw.sk83.003.001\'];
 %     sbxpath=['C:\Users\sjkim1\Desktop\scratch\' mouse '\FOV2\'];
 %     sbxpath = ['C:\Users\sjkim1\Desktop\scratch\' mouse '\'];
 end

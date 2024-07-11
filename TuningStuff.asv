@@ -92,7 +92,7 @@ xticks([1:17]);xticklabels(pureToneLabel(pureToneIndex));xlabel('Frequency(kHz)'
 
 %%
 % get the bf of all of the cell 
-[bfValue,bfPureTones]=max(squeeze((mean(medRepetition(10:25,:,:)))));
+[bfValue,bfPureTones]=max(squeeze((mean(medRepetition(20:50,:,:)))));
 % [gBfValue,gBfPureTones]=max(squeeze((mean(gMedRepetition(20:50,:,:)))));
 %get all of the neurons with the same BF and get their index
 % get their tuning curve based on the index and mean them together
@@ -102,7 +102,7 @@ xticks([1:17]);xticklabels(pureToneLabel(pureToneIndex));xlabel('Frequency(kHz)'
 for pp = 1:(nTones-3)
    tempBFIdx=find(bfPureTones==pp);
 %    gTempBFIdx=find(gBfPureTones==pp);
-   meanBFTC(pp,:)=max(squeeze(mean(medRepetition(10:25,:,tempBFIdx),3))); 
+   meanBFTC(pp,:)=max(squeeze(mean(medRepetition(20:50,:,tempBFIdx),3))); 
 %    gMeanBFTC(pp,:)=max(squeeze(mean(gMedRepetition(20:50,:,gTempBFIdx),3)));
 %    meanBFTC(pp,:)=mean(squeeze((mean(medRepetition(1:30,:,tempBFIdx)))),2); 
 end
@@ -169,24 +169,21 @@ xticklabels(pureToneLabel(pureToneIndex));xlabel('Frequency(kHz)')
 ylabel('dF/F');title('SK132 (Green, MGB) Normalized Mean Tuning Curves Grouped by BF')
 legend(num2str(pureToneOrder(gTonesNoNan)));
 %%
-nFramesPerTrial=1700;
-nFramesPerTrial=25*17;
 trialMedian = medRepetition; nTones=17;
-% trialMedianTrialTC = reshape(trialMedian,[nFramesPerTrial,nNeuron]);
-% frameRate=17;
-nNeuron=size(TCpretone_reorder,4);
-frameRate=7;
 trialMedianTrialTC = reshape(trialMedian,[nFramesPerTrial,nNeuron]);
+frameRate=17;
+trialMedianTrialTC = reshape(trialMedian,[nFramesPerTrial,nNeuron]);
+nFramesPerTrial=1700;
 
-nPlanes=1;
-figure; hold on
+
+
 for ii=1:numcells
-%     tuningFig = figure('visible','off');
+    tuningFig = figure('visible','off');
     set(gcf, 'Units', 'Normalized', 'OuterPosition', [0.15, 0.04, 0.6, 0.9]);% Enlarge figure to full screen.
         timeAxis = (0:(nTones*100)-1) * nPlanes / frameRate;
 %         timeAxis = (0:(nTones*25)-1) * nPlanes / frameRate; % by the modulus value
         tempNTones = 17; jjet = jet; colormapIndex = round(linspace(1,size(jjet,1),20)); 
-        toneColor= jjet(colormapIndex,:);
+        toneColor Beha= jjet(colormapIndex,:);
         for k = 1:tempNTones
 %             tempIdx =((k-1)*100+1):(k*100);
             tempIdx =((k-1)*25+1):(k*25);
@@ -212,28 +209,28 @@ end
 % plot(timeAxis,tempTraceTC,'color',[0.4 0.4 0.4], 'LineWidth',0.5);
 
 %% trying to make the ROI plot and failing (: 
-
-figure;refImg=ops.meanImg;        
-rotatedrefImg=imrotate(refImg,-180);  
-rotatedrefImg=flip(rotatedrefImg,1);
-rotatedrefImg=flip(rotatedrefImg,2);
-    
-    imagesc(rotatedrefImg);colormap gray;hold on;
-    ylim([0 size(rotatedrefImg,1)]);xlim([0 size(rotatedrefImg,2)]);
-    for j = 1:neuronEachPlane
-        cellIndex = neuronPlane + j;
-        if ~isempty(roisBound{i}{j})
-            x = roisBound{i}{j}(:,1); %freehand rois have the outlines in x-y coordinates
-            y = roisBound{i}{j}(:,2); %matlab matrices are inverted so x values are the 2nd column of mn coordinates, and y is the 1st columna
-            if tuning.responsiveCellFlag(cellIndex)
-                patch(x,y,C(colormapIndex(bfPureTones(cellIndex)),:),'EdgeColor','none');
-                % flip horizontally & rotate 90 degrees to the right
-            else
-                patch(x,y,[0.8 0.8 0.8],'EdgeColor','none');
-            end
-        end
-    end
-    
+% 
+% figure;refImg=ops.meanImg;        
+% rotatedrefImg=imrotate(refImg,-180);  
+% rotatedrefImg=flip(rotatedrefImg,1);
+% rotatedrefImg=flip(rotatedrefImg,2);
+%     
+%     imagesc(rotatedrefImg);colormap gray;hold on;
+%     ylim([0 size(rotatedrefImg,1)]);xlim([0 size(rotatedrefImg,2)]);
+%     for j = 1:neuronEachPlane
+%         cellIndex = neuronPlane + j;
+%         if ~isempty(roisBound{i}{j})
+%             x = roisBound{i}{j}(:,1); %freehand rois have the outlines in x-y coordinates
+%             y = roisBound{i}{j}(:,2); %matlab matrices are inverted so x values are the 2nd column of mn coordinates, and y is the 1st columna
+%             if tuning.responsiveCellFlag(cellIndex)
+%                 patch(x,y,C(colormapIndex(bfPureTones(cellIndex)),:),'EdgeColor','none');
+%                 % flip horizontally & rotate 90 degrees to the right
+%             else
+%                 patch(x,y,[0.8 0.8 0.8],'EdgeColor','none');
+%             end
+%         end
+%     end
+%     
 %% let's ignore that for now...
 % make heat map with normalized activity of all of the neurons
 % first normalize the activity for each cell (fuck)

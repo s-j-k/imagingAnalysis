@@ -213,20 +213,33 @@ end
 
 %% trying to make the ROI plot and failing (: 
 
-figure;refImg=ops.meanImg;        
+load('F:\sk134\10_10\suite2p\tuning_workspace.mat')
+%%
+iscellFlag = iscell(:,1);
+tempRoi=stat(logical(iscellFlag))';
+j=1; % planes 
+roisCoord = cell(1,j); % only 1 functional channel for suite2p
+for k = 1:length(tempRoi) % neuron in each plane 
+    bound = boundary(double(tempRoi{k}.xpix)', double(tempRoi{k}.ypix)',1); % restricted bound
+    tempCoord = [tempRoi{k}.xpix(bound)' tempRoi{k}.ypix(bound)'];
+    roisCoord{k} = tempCoord;
+end
+roisBound=roisCoord';
+refImg=ops.meanImg;
 rotatedrefImg=imrotate(refImg,-180);  
 rotatedrefImg=flip(rotatedrefImg,1);
 rotatedrefImg=flip(rotatedrefImg,2);
-    
-    imagesc(rotatedrefImg);colormap gray;hold on;
-    ylim([0 size(rotatedrefImg,1)]);xlim([0 size(rotatedrefImg,2)]);
-    for j = 1:neuronEachPlane
-        cellIndex = neuronPlane + j;
-        if ~isempty(roisBound{i}{j})
-            x = roisBound{i}{j}(:,1); %freehand rois have the outlines in x-y coordinates
-            y = roisBound{i}{j}(:,2); %matlab matrices are inverted so x values are the 2nd column of mn coordinates, and y is the 1st columna
-            if tuning.responsiveCellFlag(cellIndex)
-                patch(x,y,C(colormapIndex(bfPureTones(cellIndex)),:),'EdgeColor','none');
+
+%%
+figure;
+imagesc(rotatedrefImg);colormap gray;hold on;
+ylim([0 size(rotatedrefImg,1)]);xlim([0 size(rotatedrefImg,2)]);
+    for j = 1:length(tempRoi)
+        if ~isempty(roisBound{j})
+            x = roisBound{j}(:,1); %freehand rois have the outlines in x-y coordinates
+            y = roisBound{j}(:,2); %matlab matrices are inverted so x values are the 2nd column of mn coordinates, and y is the 1st columna
+            if tuning.responsiveCellFlag(j)
+                patch(x,y,C(colormapIndex(bfPureTones(j)),:),'EdgeColor','none');
                 % flip horizontally & rotate 90 degrees to the right
             else
                 patch(x,y,[0.8 0.8 0.8],'EdgeColor','none');

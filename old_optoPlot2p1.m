@@ -1,3 +1,5 @@
+%do not use this code.
+
 load('O:\sjk\DATA\imagingData\2p-opto\sk241\003_005_lightoff_lighton\suite2p\plane0\Fall.mat')
 
 manualCell=[9,3,22,40,17,38];

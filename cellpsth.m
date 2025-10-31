@@ -1,4 +1,4 @@
-function  ph = psth(times, binsize, fs, ntrials, triallen, varargin)
+function  ph = cellpsth(times, binsize, fs, ntrials, triallen, varargin)
 % PSTH Computes the peri-stimulus time histogram from spike times.
 % The routine plots the trial averaged spike rate as a function of time.
 % H = PSTH(TIMES, BINSIZE, FS,NTRIALS,TRIALLEN)

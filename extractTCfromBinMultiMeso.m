@@ -35,8 +35,6 @@ if strcmp(mouse,'sk83')
 %     sbxpath = ['C:\Users\sjkim1\Desktop\scratch\' mouse '\'];
 end
 
-
-
 if strcmp(mouse,'sk70')
 %     suite2ppath = ['C:\Users\sjkim1\Desktop\scratch\' mouse '\suite2p\'];
 %     sbxpath = ['C:\Users\sjkim1\Desktop\scratch\' mouse '\'];

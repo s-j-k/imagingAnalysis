@@ -1,8 +1,7 @@
-pclamppath = 'O:\sjk\DATA\imagingData\2p-opto\sk272\';
-fname = '2025_07_15_0028'; 
-savedir =pclamppath;
-[abfdata,samplingrate,header] = abfload([pclamppath,[fname, '.abf']]);
-savename = [savedir,strrep(fname,'.abf','_processed')];
+function [frame_recording,opto_recording,sound_recording,numframes] = optoReadAbf(pclampFile,pclampPath)
+
+[abfdata,samplingrate,header] = abfload([pclampPath,pclampFile]);
+savename = [pclampPath,strrep(pclampFile,'.abf','_processed')];
 Fs = 1/(samplingrate*(10^-6)); % capture the sampling rate in Hz
 
 % Identify channel with all potential channel types
@@ -38,6 +37,8 @@ sound_recording = abfdata(:,soundChannel);
 % length stim duration
 
 
-figure; ax1=subplot(2,1,1);plot(sound_recording);hold on;
-ax2=subplot(2,1,2);plot(frame_recording);
-linkaxes([ax1 ax2],'xy')
+figure; ax1=subplot(3,1,1);plot(sound_recording);hold on;
+ax2=subplot(3,1,2);plot(frame_recording);
+ax3=subplot(3,1,3);plot(opto_recording);
+linkaxes([ax1 ax2 ax3],'xy')
+end

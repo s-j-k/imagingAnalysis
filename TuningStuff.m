@@ -18,24 +18,26 @@ tmpAllCellsReshape=squeeze(mean(tmpTrialsMeanReshaped,3))';
 
 %%
 % % need to add the green channel manually first
-greenPath='W:\su\CODE\imagingAnalysis\process2p-master\examples\config\20230704_sk132_tuning_00001_Tuning\population\';
-cd(greenPath)
-load([greenPath 'tuning.mat']);
-greenSuite2pPath='E:\sk132\tuning\suite2p\plane0';
+% greenPath='W:\su\CODE\imagingAnalysis\process2p-master\examples\config\20230704_sk132_tuning_00001_Tuning\population\';
+% cd(greenPath)
+% load([greenPath 'tuning.mat']);
+greenSuite2pPath='O:\sjk\DATA\imagingData\meso\sk269\pre_WR_tuning\005\suite2p\plane0';
 cd(greenSuite2pPath);
 load('Fall.mat');
 %suite2p data
 greenF=F;greenFneu=Fneu;greenIsCell=iscell;greenRedCell=redcell;greenOps=ops;greenSpks=spks;greenStat=stat;
 % for the extracted data
-greenNeuronEachPlane=neuronEachPlane;greenPeakFrames=peakFrames;greenTuning=tuning;
+
+greenNeuronEachPlane=neuronEachPlane;greenPeakFrames=peakFrames;
+% greenTuning=tuning;
 greenTCpretone_reorder=TCpretone_reorder(:,:,:,greenTuning.responsiveCellFlag);
 greenToneLabel=toneLabel;
 sum(greenTuning.responsiveCellFlag(:)==1) % how many responsive axon segments 
 
-cd('O:\sjk\sk132\tuning_red\suite2p\plane0')
+% cd('O:\sjk\sk132\tuning_red\suite2p\plane0')
 % cd('O:\sjk\sk126\tuning\sk126_0708_tuning2\suite2p_red\plane0');
-load('Fall.mat')
-load('O:\sjk\sk132\tuning_red\20230704_tuning_00001_Tuning1\population\tuning.mat')
+% load('Fall.mat')
+% load('O:\sjk\sk132\tuning_red\20230704_tuning_00001_Tuning1\population\tuning.mat')
 % load('O:\sjk\sk126\tuning\sk126_0708_tuning2\20230708_sk126_00002_Tuning\population\tuning.mat');
 
 %%
